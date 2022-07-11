@@ -19,7 +19,8 @@ main function reads host/port from env just for an example, flavor it following 
 */
 
 func registerRoutes(router *mux.Router) {
-	router.HandleFunc("/name/{name}", handlers.SayHello).Methods(http.MethodGet)
+	router.HandleFunc("/name/{name}", handlers.NameHandler).Methods(http.MethodGet)
+	router.HandleFunc("/bad", handlers.BadHandler).Methods(http.MethodGet)
 }
 
 // Start /** Starts the web server listener on given host and port.
